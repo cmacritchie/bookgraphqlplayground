@@ -26,9 +26,17 @@ app.use('/graphql', cors(), bodyParser.json(), expressGraphQL({
     graphiql: true
 }))
 
+if(['production', 'ci'].includes(process.env.NODE_ENV)) {
+    app.use(express.static('client/build'))
 
+    const path = require('path')
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve('client', 'build', 'index.html'))
+    })
+}
 
 //Start Server
+const PORT = process.env.PORT || 5000
 app.listen(4000, () => {
     console.log('listening port 4000')
 })
