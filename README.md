@@ -20,3 +20,5 @@ The purpose of this project was to learn graphql on the backend and implement a 
 
 
 Now the project is up and running; go to http://localhost:3000/#/ to view the application.
+
+build step: https://medium.com/bb-tutorials-and-thoughts/how-to-develop-and-build-react-app-with-nodejs-bc06fa1c18f3
